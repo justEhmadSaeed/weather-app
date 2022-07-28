@@ -18,11 +18,29 @@ const Sidebar = () => {
       </div>
       {/* Cities List */}
       <ul className="nav__cities">
-        <li>Karachi</li>
-        <li>Lahore</li>
-        <li>New York</li>
-        <li>California</li>
+        <li className="nav__cities-item">Karachi</li>
+        <li className="nav__cities-item">Lahore</li>
+        <li className="nav__cities-item">New York</li>
+        <li className="nav__cities-item">California</li>
       </ul>
+      {/* Weather Details */}
+      <div className="details">
+        <h4 className="details__heading">Weather Details</h4>
+        <ul className="details__list">
+          <li className="details__list-item">
+            <div>Cloudy</div>
+            <div>86%</div>
+          </li>
+          <li className="details__list-item">
+            <div>Humidity</div>
+            <div>62%</div>
+          </li>
+          <li className="details__list-item">
+            <div>Wind</div>
+            <div>8km/h</div>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

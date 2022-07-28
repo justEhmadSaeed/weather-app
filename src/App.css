@@ -59,7 +59,7 @@
   margin: 1rem 2rem 0;
   background-color: transparent;
   font-size: 1rem;
-  border-width: 0 0 2px;
+  border-width: 0 0 1px;
   outline: 0;
   text-align: center;
   border-color: rgba(255, 255, 255, 0.5);
@@ -73,6 +73,7 @@
 .search__input:-webkit-autofill:hover,
 .search__input:-webkit-autofill:focus,
 .search__input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px rgb(181, 168, 168) inset !important;
   -webkit-box-shadow: 0 0 0 30px rgb(181, 168, 168) inset !important;
 }
 .search__input::placeholder {
@@ -91,10 +92,31 @@
 .nav__cities {
   padding: 2rem 0;
   margin: 0 2rem;
-  color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
-.nav__cities > li {
+.nav__cities-item {
+  color: rgba(255, 255, 255, 0.7);
   list-style: none;
   margin-top: 0.5rem;
+}
+.nav__cities-item:hover {
+  cursor: pointer;
+  color: white;
+}
+.details {
+  margin: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.details__heading {
+  font-weight: 400;
+}
+.details__list {
+  padding: 0;
+}
+.details__list-item {
+  color: rgba(255, 255, 255, 0.7);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
