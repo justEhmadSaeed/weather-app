@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import search_icon from 'assets/icons/search.svg';
 import { WeatherContext } from 'contexts/weather';
 
@@ -13,6 +13,10 @@ const Sidebar = () => {
   const onSearchClick = () => {
     changeCity(searchCity);
   };
+
+  useEffect(() => {
+    if (weatherData) setSearchCity(weatherData.name);
+  }, [weatherData, changeCity]);
 
   return (
     <div className="nav">
