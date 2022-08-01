@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import search_icon from 'assets/icons/search.svg';
+import WeatherContext from 'contexts/weather';
 
 const Sidebar = () => {
+  const [searchCity, setSearchCity] = useState('');
+  const [weatherData, changeCity] = useContext(WeatherContext);
+  const onCityClick = (e) => {
+    changeCity(e.target.innerText);
+  };
+  const onSearchClick = () => {
+    changeCity(searchCity);
+  };
+
   return (
     <div className="nav">
       <div className="search">
@@ -10,18 +20,32 @@ const Sidebar = () => {
           type="text"
           name="location"
           id=""
+          value={searchCity}
+          onChange={(e) => setSearchCity(e.target.value)}
           placeholder="Another Location"
         />
-        <button className="search__button">
+        <button className="search__button" onClick={onSearchClick}>
           <img className="search__icon" src={search_icon} alt="" />
         </button>
       </div>
       {/* Cities List */}
       <ul className="nav__cities">
-        <li className="nav__cities-item">Karachi</li>
-        <li className="nav__cities-item">Lahore</li>
-        <li className="nav__cities-item">New York</li>
-        <li className="nav__cities-item">California</li>
+        <li className="nav__cities-item" onClick={onCityClick} value="Karachi">
+          Karachi
+        </li>
+        <li className="nav__cities-item" onClick={onCityClick} value="London">
+          London
+        </li>
+        <li className="nav__cities-item" onClick={onCityClick} value="New York">
+          New York
+        </li>
+        <li
+          className="nav__cities-item"
+          onClick={onCityClick}
+          value="California"
+        >
+          California
+        </li>
       </ul>
       {/* Weather Details */}
       <div className="details">
@@ -29,15 +53,15 @@ const Sidebar = () => {
         <ul className="details__list">
           <li className="details__list-item">
             <div>Cloudy</div>
-            <div>86%</div>
+            <div>{weatherData?.clouds.all}%</div>
           </li>
           <li className="details__list-item">
             <div>Humidity</div>
-            <div>62%</div>
+            <div>{weatherData?.main.humidity}%</div>
           </li>
           <li className="details__list-item">
             <div>Wind</div>
-            <div>8km/h</div>
+            <div>{weatherData?.wind.speed}km/h</div>
           </li>
         </ul>
       </div>
