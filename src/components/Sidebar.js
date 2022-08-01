@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import search_icon from 'assets/icons/search.svg';
-import WeatherContext from 'contexts/weather';
+import { WeatherContext } from 'contexts/weather';
 
 const CITIES = ['Karachi', 'Multan', 'London', 'New York', 'California'];
 
