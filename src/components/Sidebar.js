@@ -63,6 +63,14 @@ const Sidebar = () => {
             <div>Wind</div>
             <div>{weatherData?.wind.speed}km/h</div>
           </li>
+          <li className="details__list-item">
+            <div>Max Temperature</div>
+            <div>{weatherData?.main.temp_max}&deg;</div>
+          </li>
+          <li className="details__list-item">
+            <div>Min Temperature</div>
+            <div>{weatherData?.main.temp_min}&deg;</div>
+          </li>
         </ul>
       </div>
     </div>
