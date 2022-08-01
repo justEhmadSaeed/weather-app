@@ -48,31 +48,33 @@ const Sidebar = () => {
         </li>
       </ul>
       {/* Weather Details */}
+      {weatherData && (
       <div className="details">
         <h4 className="details__heading">Weather Details</h4>
         <ul className="details__list">
           <li className="details__list-item">
             <div>Cloudy</div>
-            <div>{weatherData?.clouds.all}%</div>
+              <div>{weatherData.clouds.all}%</div>
           </li>
           <li className="details__list-item">
             <div>Humidity</div>
-            <div>{weatherData?.main.humidity}%</div>
+              <div>{weatherData.main.humidity}%</div>
           </li>
           <li className="details__list-item">
             <div>Wind</div>
-            <div>{weatherData?.wind.speed}km/h</div>
+              <div>{weatherData.wind.speed}km/h</div>
           </li>
           <li className="details__list-item">
             <div>Max Temperature</div>
-            <div>{weatherData?.main.temp_max}&deg;</div>
+              <div>{weatherData.main.temp_max}&deg;</div>
           </li>
           <li className="details__list-item">
             <div>Min Temperature</div>
-            <div>{weatherData?.main.temp_min}&deg;</div>
+              <div>{weatherData.main.temp_min}&deg;</div>
           </li>
         </ul>
       </div>
+      )}
     </div>
   );
 };
